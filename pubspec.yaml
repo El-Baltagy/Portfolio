@@ -1,0 +1,72 @@
+name: messagy_app
+description: A new Flutter project.
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.19.3 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+
+  cupertino_icons: ^1.0.5
+  flutter_svg: ^2.0.5
+  smooth_page_indicator: ^1.1.0
+  sizer: ^2.0.15
+  image_network: ^2.5.1
+  connectivity_plus: ^2.3.7
+  url_launcher: ^6.1.2
+  carousel_slider: ^4.2.1
+  animated_text_kit: ^4.2.2
+  google_nav_bar: ^5.0.6
+  expandable: ^5.0.1
+  lottie: ^2.3.2
+  bloc: ^8.1.1
+  flutter_bloc: ^8.1.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_launcher_icons: "^0.13.0"
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/icons/luncher.png"
+  min_sdk_android: 21 # android min sdk min:16, default 21
+  web:
+    generate: true
+    image_path: "assets/icons/luncher.png"
+
+  flutter_lints: ^2.0.0
+
+
+flutter:
+
+  uses-material-design: true
+  assets:
+    - assets/imgs/
+    - assets/icons/
+
+
+
+#  fonts:
+#    - family: Montserrat
+#      fonts:
+#        - asset: assets/fonts/montserrat/montserrat.ttf
+#
+#    - family: Poppins
+#      fonts:
+#        - asset: assets/fonts/poppins/Poppins-Regular.ttf
+#        - asset: assets/fonts/poppins/Poppins-Light.ttf
+#        - asset: assets/fonts/poppins/Poppins-Bold.ttf
+#          weight: 900
+#        - asset: assets/fonts/poppins/Poppins-Medium.ttf
+#          weight: 300
+#        - asset: assets/fonts/poppins/Poppins-SemiBold.ttf
+#          weight: 500
+#        - asset: assets/fonts/poppins/Poppins-Italic.ttf
+#          style: italic
