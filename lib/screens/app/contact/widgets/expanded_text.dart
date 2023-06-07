@@ -46,34 +46,23 @@ class _BuildExpandedState extends State<BuildExpanded> {
                 ]
                     :  [blackColorShadow] ,
               ),
-              child: InkWell(
-                onHover: (isHovering) {
-
-                  if (isHovering) {
-                    setState(() => isHover = true);
-
-                  } else {
-                    setState(() => isHover = false);
-
-                  }},
-                child: ExpandablePanel(
-                  collapsed: Space.y(1.h)!,
-                  theme: ExpandableThemeData(
-                  iconColor: Colors.red,
-                    useInkWell: true,
-                  fadeCurve: curve,
-                  animationDuration: duration*0.25,
-                  sizeCurve:curve,
-                  ),
-                  expanded:Text(widget.expandedTxt.text2,
-                    style: TextStyle(
-                        color:theme.textColor,
-                        fontSize:Responsive.isDesktop(context)?14:Responsive.isTablet(context)?13:10),),
-                  header: Text(widget.expandedTxt.text1,
-                    style: TextStyle(
-                        color:theme.textColor,
-                        fontSize:Responsive.isDesktop(context)?18:Responsive.isTablet(context)?15:11),),
+              child: ExpandablePanel(
+                collapsed: Space.y(1.h)!,
+                theme: ExpandableThemeData(
+                iconColor: Colors.red,
+                  useInkWell: true,
+                fadeCurve: curve,
+                animationDuration: duration*0.25,
+                sizeCurve:curve,
                 ),
+                expanded:Text(widget.expandedTxt.text2,
+                  style: TextStyle(
+                      color:theme.textColor,
+                      fontSize:Responsive.isDesktop(context)?14:Responsive.isTablet(context)?13:12),),
+                header: Text(widget.expandedTxt.text1,
+                  style: TextStyle(
+                      color:theme.textColor,
+                      fontSize:Responsive.isDesktop(context)?18:Responsive.isTablet(context)?15:14),),
               ),
             ),
           ],

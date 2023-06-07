@@ -1,6 +1,5 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
-import 'package:messagy_app/shared/changes/sizes.dart';
 import 'package:messagy_app/shared/core/configs/configs.dart';
 
 
@@ -12,21 +11,6 @@ CustomSectionHeading({required context,required
   return AnimatedTextKitContact(text: text,repeatingAnimation:repeatingAnimation,
       fontSize:fontSize );
 }
-
-
-// class CustomSectionHeading extends StatelessWidget {
-//   final String text;
-//   final bool repeatingAnimation;
-//    final double fontSize;
-//   const CustomSectionHeading({Key? key, double? fontSize,required this.text, required this.repeatingAnimation}) : super(key: key);
-//
-//   get fontSize => null;
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return ;
-//   }
-// }
 
 class AnimatedTextKitContact extends StatelessWidget {
   const AnimatedTextKitContact({

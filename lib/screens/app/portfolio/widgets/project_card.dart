@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-
 import 'package:messagy_app/shared/core/configs/configs.dart';
 import 'package:messagy_app/shared/widgets/cashedImage.dart';
 import 'package:sizer/sizer.dart';
 import '../../../../shared/changes/colors.dart';
 import '../../../../shared/changes/constants.dart';
 import '../../../../shared/changes/strings.dart';
-import '../../../../shared/components.dart';
+import '../../../../shared/navigation.dart';
 import '../../../../shared/core/res/responsive.dart';
 import '../../../../shared/changes/utils.dart';
 import '../../home/widgets/texts.dart';
@@ -37,7 +36,7 @@ class ProjectCardState extends State<ProjectCard> {
         mainAxisSize: MainAxisSize.min,
         children: [
           InkWell(
-            mouseCursor: MouseCursor.uncontrolled,
+            // mouseCursor: MouseCursor.uncontrolled,
             // onTap: () {
               // GoPage().pushNavigation(context, path: projectDetail(appName: widget.project.titles, title: widget.project.description, image:  widget.project.banners,))  ;},
             // onTap: () {

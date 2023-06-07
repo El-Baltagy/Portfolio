@@ -7,7 +7,7 @@ import 'package:messagy_app/shared/core/configs/configs.dart';
 import 'package:sizer/sizer.dart';
 import '../../../shared/changes/sizes.dart';
 import '../../../shared/changes/strings.dart';
-import '../../../shared/components.dart';
+import '../../../shared/navigation.dart';
 import '../../../shared/core/configs/others/space.dart';
 import '../../../shared/changes/utils.dart';
 import '../../../shared/widgets/custom_text_heading.dart';
@@ -29,41 +29,41 @@ class _ContactDesktopState extends State<ContactDesktop> {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     Size size = MediaQuery.of(context).size;
-    return Center(
-      child: Container(
-        padding: EdgeInsets.symmetric(horizontal: size.width / 10),
-        child:Column(
-          children: [
-            SizedBox(height: startHeight),
-            buildFItem(),
-            bildContactAnimy(),
-            CustomSectionSubHeading(
-              text:
-              contactSubHeadding  ,
-            ),
-            Space.y(1.5.w)!,
-            Wrap(
-                alignment: WrapAlignment.center,
-                runSpacing: 50,
-                children: contactUtils
-                    .asMap()
-                    .entries
-                    .map((e) => IconButton(
-                  icon: Image.network(
-                    e.value.icon,
-                    color: theme.textColor,
-                  ),
-                  onPressed: () => openURL(e.value.url),
-                  highlightColor: Colors.white54,
-                  iconSize: 21,
-                ))
-                    .toList()),
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: size.width / 10),
+      child:Column(
+        children: [
+          SizedBox(height: startHeight),
+          buildFItem(),
+          Space.y(5.h)!,
+          buildSItem(),
+          bildContactAnimy(),
+          CustomSectionSubHeading(
+            text:
+            contactSubHeadding  ,
+          ),
+          Space.y(1.5.w)!,
+          Wrap(
+              alignment: WrapAlignment.center,
+              runSpacing: 50,
+              children: contactUtils
+                  .asMap()
+                  .entries
+                  .map((e) => IconButton(
+                icon: Image.network(
+                  e.value.icon,
+                  color: theme.textColor,
+                ),
+                onPressed: () => openURL(e.value.url),
+                highlightColor: Colors.white54,
+                iconSize: 21,
+              ))
+                  .toList()),
 
-            SizedBox(height: 2.h),
-            Footer(),
+          SizedBox(height: 2.h),
+          Footer(),
 
-          ],
-        ),
+        ],
       ),
     );
   }

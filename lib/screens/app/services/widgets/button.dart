@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:messagy_app/shared/changes/colors.dart';
 
 import '../../../../shared/changes/strings.dart';
-import '../../../../shared/components.dart';
+import '../../../../shared/navigation.dart';
 
 class buildOutlinedButton extends StatelessWidget {
   buildOutlinedButton({

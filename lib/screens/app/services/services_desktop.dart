@@ -23,29 +23,27 @@ class ServiceDesktop extends StatefulWidget {
 class ServiceDesktopState extends State<ServiceDesktop> {
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
-    double width = MediaQuery.of(context).size.width;
+    Size size = MediaQuery.of(context).size;
 
+    final cubit=CarousalCubit.get(context);
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: width / 8),
+      padding: EdgeInsets.symmetric(horizontal: size.width / 8),
       margin: const EdgeInsets.only(bottom: 20),
       child: BlocBuilder<CarousalCubit,CarousalState>(
         builder: (context, state) {
-          final cubit=CarousalCubit.get(context);
+
           return Column(
             mainAxisSize: MainAxisSize.min,
             children: [
               SizedBox(height: startHeight),
-              // const CustomSectionHeading(text: '\nSkills?', repeatingAnimation: false,),
-              // Space.y(3.w)!,
               buildStartSection(context,'\nWhat I can do?'),
               Space.y(1.w)!,
               CustomSectionSubHeading(text: servicesSubHeading),
               Space.y(2.w)!,
               if(Responsive.isDesktop(context))
                 Wrap(
-                  spacing: width * 0.05,
-                  runSpacing: height * 0.05,
+                  spacing:size. width * 0.05,
+                  runSpacing:size. height * 0.05,
                   alignment: WrapAlignment.start,
                   crossAxisAlignment: WrapCrossAlignment.start,
                   children: servicesUtils
@@ -58,18 +56,9 @@ class ServiceDesktopState extends State<ServiceDesktop> {
                 ),
               if(Responsive.isTablet(context))
                 ...[
-                  buildCarouselSlider(
-                    count: servicesUtils.length,
-                    onPageChanged: ( int value,carousalChange) {
-                      cubit.cahngeIndicator1(value);
-                    },
-                    itemBuilder:(BuildContext context, int itemIndex, int i) => Padding(
-                      padding: EdgeInsets.symmetric(vertical: 0.5.w),
-                      child: ServiceCard(service: servicesUtils[i]),
-                    ) ,
-                  ),
+                  carousalBloc1(cubit: cubit),
                   Space.y(6.h)!,
-                  buildIndicator(current: cubit.currentIndicator1,count: servicesUtils.length),
+                  buildIndic1(cubit: cubit),
                 ],
 
             ],

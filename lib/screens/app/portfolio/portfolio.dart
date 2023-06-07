@@ -12,15 +12,10 @@ class Portfolio extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final cubit=mainCubit.get(context);
-    return  EntranceFader(
-      delay: cubit.isVerticalView?noDelayEntrance:delayEntrance,
-      duration: cubit.isVerticalView?noDurationEntrance:durationEntrance,
-      offset:noOffsetEntrance,
-      child: Responsive(
-        mobile: PortfolioMobileTab(),
-        tablet: PortfolioDesktop(),
-        desktop: PortfolioDesktop(),
-      ),
+    return  Responsive(
+      mobile: PortfolioMobileTab(),
+      tablet: PortfolioDesktop(),
+      desktop: PortfolioDesktop(),
     );
   }
 }

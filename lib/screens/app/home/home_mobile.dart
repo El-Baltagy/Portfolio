@@ -6,7 +6,7 @@ import 'package:sizer/sizer.dart';
 
 import '../../../shared/changes/sizes.dart';
 import '../../../shared/changes/strings.dart';
-import '../../../shared/components.dart';
+import '../../../shared/navigation.dart';
 import '../../../shared/core/configs/others/space.dart';
 
 

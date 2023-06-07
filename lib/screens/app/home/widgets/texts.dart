@@ -172,7 +172,7 @@ class _Button1State extends State<Button1> {
             style: TextStyle(
               color: widget.reverse? !isHover?primaryColor:theme.textColor:isHover?primaryColor:theme.textColor,
               fontSize: Responsive.isDesktop(context)?20:Responsive.isTablet(context)?17:14,
-              fontWeight:FontWeight.w100 ,
+              fontWeight:Responsive.isDesktop(context)?FontWeight.w200:FontWeight.w700,
             ),
             ),
           ],
@@ -201,6 +201,14 @@ FlickerAnimatedText flickerAnimatedText({
       textStyle: TextStyle(
         fontSize: fontSize
       ));
+}
+ScaleAnimatedText RotatedAnimatedText({
+  required String text,
+
+}) {
+  return ScaleAnimatedText(text,scalingFactor: 0.65,
+      duration: const Duration(seconds:5),textAlign: TextAlign.center,
+      );
 }
 
 // Shimmer buildShimmerText({

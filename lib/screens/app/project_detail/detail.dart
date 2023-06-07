@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
-import '../../../shared/components.dart';
+import '../../../shared/navigation.dart';
 import '../../background/background.dart';
 import 'dart:html';
 import 'dart:ui' as ui;

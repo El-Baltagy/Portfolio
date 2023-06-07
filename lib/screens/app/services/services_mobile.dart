@@ -32,18 +32,9 @@ class ServiceMobile extends StatelessWidget {
               child: CustomSectionSubHeading(text: servicesSubHeading),
             ),
             Space.y(5.w)!,
-            buildCarouselSlider(
-              count: servicesUtils.length,
-              onPageChanged: ( int value,carousalChange) {
-                cubit.cahngeIndicator1(value);
-              },
-              itemBuilder:(BuildContext context, int itemIndex, int i) => Padding(
-                padding: EdgeInsets.symmetric(vertical: 0.5.w),
-                child: ServiceCard(service: servicesUtils[i]),
-              ) ,
-            ),
+            carousalBloc1(cubit: cubit),
             Space.y(6.h)!,
-            buildIndicator(current: cubit.currentIndicator1,count: servicesUtils.length),
+            buildIndic1(cubit: cubit),
 
           ],
         );

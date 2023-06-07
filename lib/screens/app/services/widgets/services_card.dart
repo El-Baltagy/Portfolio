@@ -20,7 +20,7 @@ class _ServiceCardState extends State<ServiceCard> {
 
   @override
   Widget build(BuildContext context) {
-    var theme = Theme.of(context);
+    final theme = Theme.of(context);
     return Container(
       width: Responsive.isDesktop(context) ? 14.w : 40.w,
       height: Responsive.isDesktop(context) ?38.h:20.h,

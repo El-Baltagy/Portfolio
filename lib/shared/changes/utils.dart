@@ -1,7 +1,9 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import '../../screens/app/0-main/cubit/main_cubit.dart';
 import '../../screens/app/contact/contact.dart';
 import '../../screens/app/home/home.dart';
+import '../../screens/app/home/widgets/texts.dart';
 import '../../screens/app/portfolio/portfolio.dart';
 import '../../screens/app/services/services.dart';
 import 'constants.dart';
@@ -16,6 +18,7 @@ class BodyUtils {
     Services(key: serviceKey),
     Portfolio(key:portfolioKey ),
     Contact(key: contactKey),
+    // Container(key: contactKey),
 
   ];
 }
@@ -36,6 +39,19 @@ class NavBarUtils {
     // Icons.settings,
     Icons.contact_page,
   ];
+}
+
+List<AnimatedText> deskTopList() {
+  return List<AnimatedText>.generate(
+      AnimatiobText().animationtxt.length,
+          (index) => flickerAnimatedText(fontSize:20 ,text:AnimatiobText().animationtxt[index] )
+  );
+}
+List<AnimatedText> contactList() {
+  return List<AnimatedText>.generate(
+      AnimatiobText().animyContactTxt.length,
+          (index) => RotatedAnimatedText(text:AnimatiobText().animyContactTxt[index] )
+  );
 }
 
 

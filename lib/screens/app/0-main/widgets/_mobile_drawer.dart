@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:messagy_app/shared/core/configs/configs.dart';
 import 'package:sizer/sizer.dart';
 import '../../../../shared/changes/strings.dart';
-import '../../../../shared/components.dart';
+import '../../../../shared/navigation.dart';
 import '../../../../shared/core/configs/others/space.dart';
 import '../../../../shared/core/theme/cubit/theme_cubit.dart';
 import '../../../../shared/core/theme/cubit/theme_state.dart';
@@ -17,13 +17,13 @@ class MobileDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // final scrollProvider = Provider.of<ScrollProvider>(context);
-    // theme
-    var theme = Theme.of(context);
+    final cubit=ThemeCubit.get(context);
+    final theme = Theme.of(context);
     return Drawer(
 
-      child: BlocBuilder<ThemeCubit, ThemeState>(
+      child: BlocBuilder(
         builder: (context, state) {
-          final cubit=ThemeCubit.get(context);
+
           return Material(
             elevation: 10,
             color: theme.scaffoldBackgroundColor,
@@ -44,14 +44,18 @@ class MobileDrawer extends StatelessWidget {
                     ),
                     title:
                         Text(cubit.isLightTheme ? "Light Mode" : "Dark Mode"),
-                    trailing: Switch(
-                      value: cubit.isLightTheme,
-                      activeColor: theme.primaryColor,
-                      inactiveTrackColor: Colors.grey,
-                      onChanged: (newValue) {
-                        cubit.updateTheme(context);
-                      },
-                    ),
+                    trailing: BlocBuilder<ThemeCubit, ThemeState>(
+                        buildWhen: (previous, current) {
+                          return previous is initiallState &&current is  themeState;
+                        },
+                        builder: (context, state) => Switch(
+                          value: cubit.isLightTheme,
+                          activeColor: theme.primaryColor,
+                          inactiveTrackColor: Colors.grey,
+                          onChanged: (newValue) {
+                            cubit.updateTheme(context);
+                          },
+                        )),
                   ),
                   const Divider(),
                   ...NavBarUtils.names.asMap().entries.map(
@@ -64,29 +68,6 @@ class MobileDrawer extends StatelessWidget {
                               //         Navigator.pop(context);
                             }),
                       ),
-                  // ...NavBarUtils.names.asMap().entries.map(
-                  //       (e) => Padding(
-                  //     padding: const EdgeInsets.all(8.0),
-                  //     child: MaterialButton(
-                  //       hoverColor: theme.primaryColor.withAlpha(70),
-                  //       onPressed: () {
-                  //         // scrollProvider.scrollMobile(e.key);
-                  //         scrollProvider.jumpTo(e.key);
-                  //         Navigator.pop(context);
-                  //       },
-                  //       child: ListTile(
-                  //         leading: Icon(
-                  //           NavBarUtils.icons[e.key],
-                  //           // color: theme.primaryColor,
-                  //         ),
-                  //         title: Text(
-                  //           e.value,
-                  //           // style: AppText.l1,
-                  //         ),
-                  //       ),
-                  //     ),
-                  //   ),
-                  // ),
                   Space.y(10.w)!,
                    Button1( text: 'Resume', reverse: true,
                      function: () { openURL(resume); },)

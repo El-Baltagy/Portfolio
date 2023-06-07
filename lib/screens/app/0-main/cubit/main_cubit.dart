@@ -25,10 +25,11 @@ class mainCubit extends Cubit<mainStates>{
 
   updateView(){
     isVerticalView=!isVerticalView;
-    emit(initialmainStates());
+    emit(changView(isVerticalView));
   }
 
   changeIndexFromArrow(bool isForward,{isTab=false}){
+
     if (isForward) {
       SelectedIndex++;
     }  else{
@@ -46,12 +47,11 @@ class mainCubit extends Cubit<mainStates>{
         emit(AppBarIndexChanged(SelectedIndex));
         Timer(Duration(milliseconds: 10), () {
           isScroll=true;
-          emit(initialmainStates());
         });
       }
-
     }
-    emit(initialmainStates());
+    emit(changIFromArrow());
+
   }
 
 

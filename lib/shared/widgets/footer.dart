@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:messagy_app/shared/core/configs/configs.dart';
 
 import '../changes/strings.dart';
-import '../components.dart';
+import '../navigation.dart';
 import '../core/res/responsive.dart';
 class Footer extends StatelessWidget {
   const Footer({Key? key}) : super(key: key);

@@ -1,5 +1,4 @@
 import 'dart:ui';
-import 'package:messagy_app/screens/app/0-main/widgets/_mobile_drawer.dart';
 import 'package:messagy_app/screens/app/0-main/widgets/_navbar_desktop.dart';
 import 'package:messagy_app/screens/app/0-main/widgets/bottomNavBar.dart';
 import 'package:flutter/material.dart';
@@ -20,8 +19,6 @@ class _MainPageState extends State<MainPage> {
 
   @override
   Widget build(BuildContext context) {
-    // App.init(context);
-    // SizeConfig().init(context);
     final scafoldKey = GlobalKey<ScaffoldState>();
     return Stack(
       children: [

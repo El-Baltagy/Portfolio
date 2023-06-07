@@ -12,15 +12,10 @@ class Contact extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final cubit=mainCubit.get(context);
-    return  EntranceFader(
-      delay: cubit.isVerticalView?noDelayEntrance:delayEntrance,
-      duration: cubit.isVerticalView?noDurationEntrance:durationEntrance,
-      offset:noOffsetEntrance,
-      child: Responsive(
-        mobile: ContactMobileTab(),
-        tablet: ContactMobileTab(),
-        desktop: ContactDesktop(),
-      ),
+    return  Responsive(
+      mobile: ContactMobileTab(),
+      tablet: ContactMobileTab(),
+      desktop: ContactDesktop(),
     );
   }
 }

@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:messagy_app/screens/app/0-main/cubit/main_cubit.dart';
 import 'package:messagy_app/screens/app/0-main/cubit/main_states.dart';
-import 'package:messagy_app/shared/core/animations/entrance_fader.dart';
-import 'package:sizer/sizer.dart';
 import '../../../../shared/changes/constants.dart';
 import '../../../../shared/changes/utils.dart';
 

@@ -7,8 +7,7 @@ import 'package:sizer/sizer.dart';
 import 'package:flutter/material.dart';
 import '../../../shared/changes/sizes.dart';
 import '../../../shared/changes/strings.dart';
-import '../../../shared/components.dart';
-import '../../../shared/core/animations/entrance_fader.dart';
+import '../../../shared/changes/utils.dart';
 import '../../../shared/core/configs/others/space.dart';
 
 class HomeDesktop extends StatefulWidget {
@@ -20,7 +19,6 @@ class HomeDesktop extends StatefulWidget {
 
 class _HomeDesktopState extends State<HomeDesktop> {
   @override
-
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return Column(
@@ -33,9 +31,9 @@ class _HomeDesktopState extends State<HomeDesktop> {
               child: SizedBox(
                 width: 35.w,
                 height: 75.h,
-                child:Lottie.asset(StaticImage.mainJson,
-                frameRate: FrameRate(60),
-                filterQuality: FilterQuality.high),
+                child: Lottie.asset(StaticImage.mainJson,
+                    frameRate: FrameRate(60),
+                    filterQuality: FilterQuality.high),
               ),
             ),
             Container(
@@ -53,20 +51,20 @@ class _HomeDesktopState extends State<HomeDesktop> {
                       children: [
                         const FirstRowBuild(fontSize1R: 30),
                         // Space.y(0.5.w)!,
-                         Row(
-                           mainAxisAlignment: MainAxisAlignment.start,
-                           children: [
-                             NameText( ),
-                           ],
-                         ),
-                         ThirdRowBuild(
-                          fontSize2R: 20,textList:
-                         deskTopList()
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            NameText(),
+                          ],
+                        ),
+                        ThirdRowBuild(
+                            fontSize2R: 20, textList:
+                        deskTopList()
                         ),
                         Space.y(1.5.w)!,
                         ForthRowBuild(theme: theme, fontSize4R: 20,),
                         Space.y(3.w)!,
-                         BuildRowButtons(),
+                        BuildRowButtons(),
                       ],
                     ),
                   ),
@@ -76,20 +74,12 @@ class _HomeDesktopState extends State<HomeDesktop> {
             )
           ],
         ),
-        SizedBox(height: startHeight*1.5),
+        SizedBox(height: startHeight * 1.5),
       ],
     )
-      ;
-  }
-
-  List<AnimatedText> deskTopList() {
-    return List<AnimatedText>.generate(
-                           AnimatiobText().animationtxt.length,
-                               (index) => flickerAnimatedText(fontSize:20 ,text:AnimatiobText().animationtxt[index] )
-                       );
+    ;
   }
 }
-
 
 
 

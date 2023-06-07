@@ -13,15 +13,10 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final cubit=mainCubit.get(context);
-    return  EntranceFader(
-      delay: delayEntrance,
-      duration: durationEntrance,
-      offset:offsetEntrance,
-      child: Responsive(
-        mobile: HomeMobile( ),
-        tablet: HomeDesktop(),
-        desktop: HomeDesktop(),
-      ),
+    return  Responsive(
+      mobile: HomeMobile( ),
+      tablet: HomeDesktop(),
+      desktop: HomeDesktop(),
     );
   }
 }

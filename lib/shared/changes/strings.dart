@@ -12,7 +12,7 @@ class StaticImage {
   static const String sun = 'assets/icons/Sun.svg';
   static const String moon = 'assets/icons/moon.svg';
   static const String mainJson = 'assets/imgs/main.json';
-  static const String contactJson = 'assets/imgs/contact.json';
+  static const String contactJsonDesk = 'assets/imgs/contact.json';
   static const String contact_stackJson = 'assets/imgs/contact-stack.json';
 
   static const String flutter = 'https://firebasestorage.googleapis.com/v0/b/portfolio-563b3.appspot.com/o/flutter.png?alt=media&token=2384f23d-8b64-48fc-b989-8fc4f25e066b';
@@ -36,6 +36,10 @@ class AnimatiobText{
     " Revit Automation",
     " Mobile Application",
     " Back-end",
+  ];
+  List<String>animyContactTxt=[
+    "Let \'s contact",
+    "Got A project ?",
   ];
 }
 
